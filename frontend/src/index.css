@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --agri-green: #16a34a;
+  --agri-orange: #ea580c;
+  --agri-brown: #92400e;
+  --agri-blue: #0ea5e9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.dark body {
+  color: #f9fafb;
+  background-color: #111827;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #22c55e;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn-primary {
+    @apply bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700;
+  }
+  
+  .input-primary {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:text-white transition-colors duration-200;
+  }
+  
+  .badge-success {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-error {
+    @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .section-padding {
+    @apply py-12 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .agriculture-gradient {
+    @apply bg-gradient-to-br from-green-50 to-amber-50 dark:from-gray-900 dark:to-gray-800;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-green-600 to-orange-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply inline-block w-6 h-6 border-2 border-solid border-current border-r-transparent rounded-full animate-spin;
+}
+
+/* Custom Form Styles */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+}
+
+.form-error {
+  @apply text-red-600 dark:text-red-400 text-sm mt-1;
+}
+
+/* Navigation Styles */
+.nav-link {
+  @apply text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200;
+}
+
+.nav-link-active {
+  @apply text-green-600 dark:text-green-400 font-semibold;
+}
+
+/* Product Card Enhancements */
+.product-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden;
+}
+
+.product-card-image {
+  @apply w-full h-48 object-cover transition-transform duration-300;
+}
+
+.product-card:hover .product-card-image {
+  @apply scale-105;
+}
+
+.product-card-content {
+  @apply p-4;
+}
+
+/* Farmer Verification Badge */
+.verified-badge {
+  @apply inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-medium;
+}
+
+/* Order Status Badges */
+.status-pending {
+  @apply badge-warning;
+}
+
+.status-confirmed {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-shipped {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-delivered {
+  @apply badge-success;
+}
+
+.status-cancelled {
+  @apply badge-error;
+}
+
+/* Message Bubble Styles */
+.message-bubble-own {
+  @apply bg-green-600 text-white rounded-lg rounded-tr-none max-w-xs lg:max-w-md;
+}
+
+.message-bubble-other {
+  @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg rounded-tl-none max-w-xs lg:max-w-md;
+}
+
+/* Dashboard Stat Cards */
+.stat-card {
+  @apply card p-6 text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-green-600 dark:text-green-400 mb-2;
+}
+
+.stat-label {
+  @apply text-gray-600 dark:text-gray-300 text-sm;
+}
+
+/* Responsive Grid Improvements */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+/* Focus States for Accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

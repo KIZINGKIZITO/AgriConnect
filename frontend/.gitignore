@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.*.local
+
+# Build Outputs (This will contain the production build)
+dist/
+build/
+.parcel-cache/
+
+# Next.js / Nuxt.js Builds
+.next/
+.nuxt/
+out/
+
+# Logs
+*.log
+
+# IDE & Editor Files
+.vscode/
+.idea/
+
+# OS-Specific Junk Files
+.DS_Store
+Thumbs.db

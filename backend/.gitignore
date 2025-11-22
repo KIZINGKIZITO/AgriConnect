@@ -1,0 +1,70 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+
+# Environment
+.env
+.env.*.local
+.env.local
+.env.test
+.env.production
+
+# Build / output
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+lib/
+
+# Logs
+logs/
+*.log
+debug.log
+npm-debug.log*
+yarn-error.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.history/
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# Database / uploads / keys
+*.sqlite
+*.sqlite3
+/uploads
+/secrets/
+*.pem
+*.key
+*.crt
+
+# Test / cache
+.cache/
+.cache-loader/
+.parcel-cache/
+jest_cache/
+.eslintcache
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+coverage/
+coverage-final.json
