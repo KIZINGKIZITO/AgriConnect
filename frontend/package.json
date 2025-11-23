@@ -1,5 +1,6 @@
+
 {
-  "name": "frontend",
+  "name": "agriconnect-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^5.4.0",
